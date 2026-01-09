@@ -1,3 +1,2 @@
+# Auto detect text files and perform LF normalization
 * text=auto
-
-# 保持跨平台行尾一致

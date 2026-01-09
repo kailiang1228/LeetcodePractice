@@ -1,1 +1,6 @@
-# 保留為空；如需忽略檔案再新增規則
+# Ignore build artifacts and IDE files
+NTUST/
+Test/**/bin/
+Test/**/obj/
+Test/**/output/
+.vscode/
