@@ -1,5 +1,4 @@
 # Ignore build artifacts and IDE files
-NTUST/
 Test/**/bin/
 Test/**/obj/
 Test/**/output/
