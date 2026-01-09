@@ -1,0 +1,39 @@
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: Optional[ListNode]
+        :type l2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        #虛擬頭節點 (方便返回結果) 神器
+        dummy_head = ListNode(0)
+        current = dummy_head # 當前節點
+        carry = 0 # 進位
+
+        # 當 l1 或 l2 有節點，或有進位時繼續迴圈
+        while l1 is not None or l2 is not None or carry != 0: # 只要有一個條件成立就繼續
+            val1 = l1.val if l1 is not None else 0 # 取得 l1 當前節點的值，若為 None 則為 0
+            val2 = l2.val if l2 is not None else 0 # 取得 l2 當前節點的值，若為 None 則為 0
+
+            # 計算當前位的和及進位
+            total = val1 + val2 + carry 
+            carry = total // 10 # 整除10 十位
+            new_digit = total % 10 # 取餘數10 個位
+
+            # 創建新節點並連接到結果鏈表
+            current.next = ListNode(new_digit) # 新節點
+            current = current.next # 移動當前節點到新節點 進位
+
+            # 移動到下一個節點
+            if l1 is not None:
+                l1 = l1.next
+            if l2 is not None:
+                l2 = l2.next
+
+        return dummy_head.next # 返回結果鏈表的頭節點 (跳過虛擬頭節點)
