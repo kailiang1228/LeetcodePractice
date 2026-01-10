@@ -4,8 +4,14 @@ Test/**/obj/
 Test/**/output/
 .vscode/
 
+# Ignore Python executable files
+__pycache__/
+.pytest_cache/
+
 # Ignore Linux executable files
 Sol
 
 # Ignore Windows executable files
 *.exe
+*.o
+*.out
