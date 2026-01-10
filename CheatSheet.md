@@ -26,6 +26,13 @@
 	```bash
 	git pull origin main
 	```
+* 修復連線問題 (HTTPS 轉 SSH)
+
+	```bash
+	git remote set-url origin git@github.com:kailiang1228/LeetcodePractice.git
+	```
+
+*
 
 * 提交變更
 

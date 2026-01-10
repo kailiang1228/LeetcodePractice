@@ -3,3 +3,9 @@ Test/**/bin/
 Test/**/obj/
 Test/**/output/
 .vscode/
+
+# Ignore Linux executable files
+Sol
+
+# Ignore Windows executable files
+*.exe
