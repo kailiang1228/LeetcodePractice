@@ -26,13 +26,30 @@
 
 #雙指針
 class Solution(object):
+    """Determine whether an integer is a palindrome. Reads the same backward as forward."""
     def isPalindrome(self, x):
         s = str(x)
         left, right = 0, len(s) - 1
-        
+
         while left < right:
             if s[left] != s[right]:
                 return False
             left += 1
             right -= 1
         return True
+
+# 模擬測試
+if __name__ == "__main__":
+    sol = Solution()
+    test_cases = [
+        (121, True),
+        (-121, False),
+        (10, False),
+        (12321, True)
+    ]
+
+    for x, expected in test_cases:
+        final = sol.isPalindrome(x)
+        print(f"Input: {x} | Expected: {expected} | Actual: {final}")
+
+# True, False, False, True

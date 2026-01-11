@@ -37,3 +37,42 @@ class Solution(object):
                 l2 = l2.next
 
         return dummy_head.next # 返回結果鏈表的頭節點 (跳過虛擬頭節點)
+
+# 模擬測試
+if __name__ == "__main__":
+    sol = Solution()
+
+    # Helper function to create a linked list from a list
+    def create_linked_list(lst):
+        dummy_head = ListNode(0)
+        current = dummy_head
+        for number in lst:
+            current.next = ListNode(number)
+            current = current.next
+        return dummy_head.next
+
+    # Helper function to print linked list
+    def print_linked_list(node):
+        values = []
+        while node:
+            values.append(str(node.val))
+            node = node.next
+        print(" -> ".join(values))
+
+    # Test cases
+    l1 = create_linked_list([2, 4, 3])
+    l2 = create_linked_list([5, 6, 4])
+    result = sol.addTwoNumbers(l1, l2)
+    print_linked_list(result)  # Expected Output: 7 -> 0 -> 8
+
+    l1 = create_linked_list([0])
+    l2 = create_linked_list([0])
+    result = sol.addTwoNumbers(l1, l2)
+    print_linked_list(result)  # Expected Output: 0
+
+    l1 = create_linked_list([9, 9, 9, 9, 9, 9, 9])
+    l2 = create_linked_list([9, 9, 9, 9])
+    result = sol.addTwoNumbers(l1, l2)
+    print_linked_list(result)  # Expected Output: 8 -> 9 -> 9 -> 9 -> 0 -> 0 -> 0 -> 1
+
+# 7 -> 0 -> 8
